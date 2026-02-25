@@ -1,0 +1,24 @@
+==> Authentication
+ => register(1. user ka data save krna. 2. token user ko dena)
+ => login
+ => logout(token blacklisted)
+ => Otp based registration
+
+==> POST
+    => create
+    => can see the feed
+    => like posts (cpllection types)
+    => save post
+
+==> Users
+    => followers
+    => following
+
+  //  user = {
+        username:string,
+        email:string,
+        passwoord:string,
+        bio:string,
+        followers:array,
+        profile_image:string
+    }
