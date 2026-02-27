@@ -5,7 +5,7 @@
  => Otp based registration
 
 ==> POST
-    => create
+    => create{ caption:string, img_url,user,createdAt}
     => can see the feed
     => like posts (cpllection types)
     => save post
