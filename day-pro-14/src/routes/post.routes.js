@@ -10,5 +10,15 @@ const uplode = multer({Storage: multer.memoryStorage()})
 //api/posts/
 postRouter.post("/",uplode.single("image"),postController.createPostController)
 
+//Get/api/posts/ [protected]
+
+postRouter.get("/",postController.getpostcController)
+
+//Get/api/posts/details/:postId
+//- return an detail about specific post with the id.also check whether the post belongs to the user that the request come from
+
+postRouter.get("/details/:postId",postController.getPostDetailsController)
+
+
 module.exports = postRouter
 
