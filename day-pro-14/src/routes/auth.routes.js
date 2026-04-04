@@ -12,4 +12,6 @@ authRouter.post('/register', authController.registerController)
 //post/api/auth/login
 
 authRouter.post("/login", authController.loginController) 
+
+
 module.exports = authRouter
