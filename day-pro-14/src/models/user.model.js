@@ -24,7 +24,8 @@ const userSchema = new mongoose.Schema({
     ProfileImage:{
         type: String,
         default:"https://ik.imagekit.io/wcfkcil5z/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-vector-illustration_561158-3407.avif?updatedAt=1771688884694",
-    }
+    },
+
 
 
 })
