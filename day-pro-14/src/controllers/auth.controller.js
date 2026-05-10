@@ -34,9 +34,11 @@ async function registerController(req, res) {
     // -use ka data hona chahiye
     // -data unique hone chahiye
     // 
-    const token = jwt.sign({
-        id: user._id
-    },
+    const token = jwt.sign(
+        {
+          id: user._id,
+          username: user.username
+        },
         process.env.JWT_SECRET,
         { expiresIn: "1d" }
     )
@@ -96,7 +98,7 @@ async function loginController (req, res) {
     }
 
     const token = jwt.sign(
-        {id: user._id},
+        {id: user._id, username: user.username},
         process.env.JWT_SECRET,
         {expiresIn: "1d" }
     )

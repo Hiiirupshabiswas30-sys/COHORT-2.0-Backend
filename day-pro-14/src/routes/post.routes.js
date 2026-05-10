@@ -5,21 +5,25 @@ const multer = require("multer")
 const uplode = multer({Storage: multer.memoryStorage()})
 const identifyUser = require("../middlewares/auth.middleware")
 
-//post/api/posts {protected}
-// - req.body = {caption,imag-file}
+// @routes POST /api/posts {protected}
+// @description create a post with image and caption. also save the image in cloudinary and save the url in database
 
-//api/posts/
 postRouter.post("/",uplode.single("image"),identifyUser,postController.createPostController)
 
-//Get/api/posts/ [protected]
+// @routes GET /api/posts {protected}
+// @description get all the posts of the user that the request come from
 
 postRouter.get("/",identifyUser,postController.getpostcController)
 
-//Get/api/posts/details/:postId
-//- return an detail about specific post with the id.also check whether the post belongs to the user that the request come from
+// @routes GET /api/posts/details/:postId
+// @description return details about a specific post with the given ID. also check whether the post belongs to the user that the request come from
 
 postRouter.get("/details/:postId",identifyUser,postController.getPostDetailsController)
 
+//@routes post/api/post/like/:postid
+//@description like a post with the given id. also check whether the post belongs to the user that the request come from
+
+postRouter.post("/like/:postId",identifyUser,postController.likePostController)
 
 module.exports = postRouter
 
